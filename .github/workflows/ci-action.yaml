@@ -94,5 +94,6 @@ jobs:
           git config --global user.name "shihab-uddin-shakil"
           sed -i "s#${{ github.actor }}.*#${{ github.actor }}/test-argocd:${{ github.sha }}#g" deployment.yaml
           git status
+          git add *
       # - run: echo ${{ github }}
       # - run: git push origin main
