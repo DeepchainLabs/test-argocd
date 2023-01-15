@@ -72,7 +72,7 @@ jobs:
           # Note: tags has to be all lower-case
           tags: |
             shihab24/gitops01:${{ github.sha }} 
-            ghcr.io/deepchainlabs/gitops-infra:${{ github.sha }}
+            ghcr.io/deepchainlabs/test-argocd:${{ github.sha }}
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
 
@@ -92,9 +92,9 @@ jobs:
         run: |
           git config --global user.email "shihabuddinshakil9@gmail.com"
           git config --global user.name "shihab-uddin-shakil"
-          git checkout origin/main
           echo ${{ github.sha }}
-          sed -i "s#${{ github.actor }}.*#${{ github.actor }}/gitops-infra:${{ github.sha }}#g" deployment.yaml
+          sed -i "s#${{ github.actor }}.*#${{ github.actor }}/test-argocd:${{ github.sha }}#g" deployment.yaml
+          git checkout origin/main
           git add -A
           git commit -am "Update image for - ${{ github.sha }}"
       - run: echo ${{ github }}
