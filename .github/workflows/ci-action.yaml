@@ -90,10 +90,10 @@ jobs:
           token: ${{ secrets.G_TOKEN }}
       - name: setup git config
         run: |
-          git config --global user.email "deepchainlabs@gmail.com"
-          git config --global user.name "DeepchainLabs"
+          git config --global user.email "shihabuddinshakil9@gmail.com"
+          git config --global user.name "shihab-uddin-shakil"
           echo ${{ github.sha }}
-          sed -i "s#${{ github.actor }}.*#${{ github.actor }}/test-argocd:${{ github.sha }}#g" deployment.yaml
+          sed -i "s#${{ github.actor }}.*#${{ github.actor }}/gitops-infra:${{ github.sha }}#g" deployment.yaml
           git add -A
           git commit -am "Update image for - ${{ github.sha }}"
       - run: echo ${{ github }}
