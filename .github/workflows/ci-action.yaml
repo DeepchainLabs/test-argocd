@@ -95,6 +95,7 @@ jobs:
           sed -i "s#${{ github.actor }}.*#${{ github.actor }}/test-argocd:${{ github.sha }}#g" deployment.yaml
           git status
           git add *
-          
+          git commit -am "Update image for - ${{ github.sha }}"
+
       - run: echo ${{ github }}
       - run: git push origin main
