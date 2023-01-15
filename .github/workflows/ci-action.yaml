@@ -93,6 +93,6 @@ jobs:
           git config --global user.email "shihabuddinshakil9@gmail.com"
           git config --global user.name "shihab-uddin-shakil"
           sed -i "s#${{ github.actor }}.*#${{ github.actor }}/test-argocd:${{ github.sha }}#g" deployment.yaml
-          
+          git status
       # - run: echo ${{ github }}
       # - run: git push origin main
