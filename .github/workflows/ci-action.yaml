@@ -72,7 +72,7 @@ jobs:
           # Note: tags has to be all lower-case
           tags: |
             shihab24/gitops01:${{ github.sha }} 
-            ghcr.io/DeepchainLabs/gitops-infra:${{ github.sha }}
+            ghcr.io/deepchainlabs/gitops-infra:${{ github.sha }}
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
 
@@ -85,7 +85,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: DeepchainLabs/gitops-infra
+          repository: deepchainlabs/gitops-infra
           ref: 'main'
           token: ${{ secrets.G_TOKEN }}
       - name: setup git config
