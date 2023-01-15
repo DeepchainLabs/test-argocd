@@ -71,7 +71,7 @@ jobs:
           context: ./
           # Note: tags has to be all lower-case
           tags: |
-            shihab24/gitops01:${{ github.sha }} 
+            shihab24/test-argocd:${{ github.sha }} 
             ghcr.io/deepchainlabs/test-argocd:${{ github.sha }}
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
